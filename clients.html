@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Clients | Tech Accessories Store</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Document-level CSS: used to style the client logos -->
+  <style>
+    .logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .logos img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      background-color: #ffffff;
+      border: 2px solid #1b2a49;
+      border-radius: 10px;
+      padding: 6px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .logos img:hover {
+      transform: scale(1.08);
+      border-color: #ff7a00;
+    }
+
+    .list-box {
+      background-color: #ffffff;
+      max-width: 400px;
+      margin: 0 auto 30px auto;
+      padding: 15px 20px 15px 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <h2>Tech Accessories Store</h2>
+  <p>Quality computer accessories for work, study and play</p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="clients.html" class="active">Our Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+    <h1>Our Clients</h1>
+
+    <h2>Client List</h2>
+
+    <!-- INLINE-LEVEL STYLE: lower roman numerals (i, ii, iii, iv ...) -->
+    <ol class="list-box" style="list-style-type: lower-roman; font-size: 1.1rem; line-height: 1.9; color: #1b2a49;">
+      <li>Kampala Tech Hub</li>
+      <li>Makerere Innovation Lab</li>
+      <li>Nile Digital Solutions</li>
+      <li>Pearl Office Supplies</li>
+      <li>Victoria Software Ltd</li>
+    </ol>
+
+    <h2>Client Logos</h2>
+
+    <!-- Logos styled by the document-level stylesheet above -->
+    <div class="logos">
+      <img src="images/kampala_Tech_Hub_logo.jpg" alt="Kampala Tech Hub logo">
+      <img src="images/Makerere_innovation_lab_logo.jpg" alt="Makerere Innovation Lab logo">
+      <img src="images/Nile_digital_logo.jpg" alt="Nile Digital Solutions logo">
+      <img src="images/pearl_office_supplies_logo.jpg" alt="Pearl Office Supplies logo">
+      <img src="images/victoria_software_ltd_logo.jpg" alt="Victoria Software Ltd logo">
+    </div>
+  </div>
+<footer>
+  &copy; 2026 Tech Accessories Store | IST 2108 Group 3 Project
+</footer>
+</body>
+</html>

@@ -1,0 +1,264 @@
+/* =========================================================
+   style.css – External stylesheet
+   Used by ALL pages (navbar + base) and the Order page form
+   ========================================================= */
+
+/* ---------- Base styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #222;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #1b2a49;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ---------- Horizontal navigation bar ---------- */
+nav {
+  background-color: #1b2a49;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+  list-style-type: none;   /* remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;           /* makes the list horizontal */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li a {
+  display: block;
+  padding: 16px 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s;
+}
+
+nav li a:hover {
+  background-color: #ff7a00;
+}
+
+nav li a.active {
+  background-color: #ff7a00;   /* highlights the current page */
+}
+
+/* ---------- Order form (external CSS with selectors) ---------- */
+form#orderForm {
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+form#orderForm fieldset {
+  border: 2px solid #1b2a49;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+form#orderForm legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #ff7a00;
+}
+
+form#orderForm label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* attribute selectors for form inputs */
+form#orderForm input[type="text"],
+form#orderForm textarea,
+form#orderForm input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form#orderForm input:focus,
+form#orderForm textarea:focus {
+  outline: none;
+  border-color: #ff7a00;
+  box-shadow: 0 0 5px rgba(255, 122, 0, 0.5);
+}
+
+/* price table inside the form */
+form#orderForm table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form#orderForm th,
+form#orderForm td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+form#orderForm th {
+  background-color: #1b2a49;
+  color: #fff;
+}
+
+form#orderForm input[type="number"] {
+  width: 80px;
+}
+
+/* the submit button (the one the JavaScript listens on) */
+form#orderForm button#orderBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff7a00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#orderForm button#orderBtn:hover {
+  background-color: #1b2a49;
+}
+
+/* box where ass.js prints its output */
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #eef6ff;
+  border-left: 5px solid #1b2a49;
+  border-radius: 5px;
+  min-height: 60px;
+}
+/* =========================================================
+   Polish: header banner, footer, animations
+   ========================================================= */
+
+/* Page background with a soft gradient */
+body {
+  background: linear-gradient(180deg, #eef2f9 0%, #f9fafc 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  flex: 1;                 /* pushes the footer to the bottom */
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Header banner above the navbar */
+.site-header {
+  background: linear-gradient(135deg, #0f1b33, #1b2a49 60%, #ff7a00);
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 15px;
+}
+
+.site-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.site-header p {
+  margin: 6px 0 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Sticky navbar that stays visible while scrolling */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Underline animation on nav links */
+nav li a {
+  position: relative;
+}
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+
+nav li a:hover::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* Heading accent line */
+h1::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0 auto;
+  background-color: #ff7a00;
+  border-radius: 2px;
+}
+
+/* Footer */
+footer {
+  background-color: #1b2a49;
+  color: #cfd6e6;
+  text-align: center;
+  padding: 18px 10px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Mobile: stack the navbar */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav li a {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .site-header h2 {
+    font-size: 1.5rem;
+  }
+}

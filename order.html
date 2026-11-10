@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | Tech Accessories Store</title>
+
+  <!-- External CSS styles the navbar AND the order form -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <h2>Tech Accessories Store</h2>
+  <p>Quality computer accessories for work, study and play</p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="clients.html">Our Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+    <h1>Place Your Order</h1>
+
+    <form id="orderForm" action="#" method="post" novalidate>
+
+      <!-- Buyer details -->
+      <fieldset>
+        <legend>Buyer Details</legend>
+
+        <label for="buyerName">Buyer's Name</label>
+        <input type="text" id="buyerName" name="buyerName" placeholder="Enter your full name" required>
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="Enter your delivery address" required></textarea>
+      </fieldset>
+
+      <!-- Products, prices and quantities -->
+      <fieldset>
+        <legend>Products</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Unit Price (UGX)</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wireless Mouse</td>
+              <td>45,000</td>
+              <!-- data-price holds the numeric price used by ass.js -->
+              <td><input type="number" id="qtyMouse" name="qtyMouse" min="0" value="0" data-price="45000"></td>
+            </tr>
+            <tr>
+              <td>Laptop Stand</td>
+              <td>60,000</td>
+              <td><input type="number" id="qtyStand" name="qtyStand" min="0" value="0" data-price="60000"></td>
+            </tr>
+            <tr>
+              <td>Mechanical Keyboard</td>
+              <td>180,000</td>
+              <td><input type="number" id="qtyKeyboard" name="qtyKeyboard" min="0" value="0" data-price="180000"></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+
+      <!-- Hover over this button to trigger the JavaScript -->
+      <button type="submit" id="orderBtn">Place Order (hover to see summary)</button>
+
+      <!-- ass.js prints its output here -->
+      <div id="result">Hover over the button to see your order summary.</div>
+    </form>
+  </div>
+<footer>
+  &copy; 2026 Tech Accessories Store | IST 2108 Group 3 Project
+</footer>
+  <!-- External JavaScript file (placed at end of body so the DOM is ready) -->
+  <script src="ass.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Tech Accessories Store</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Document-level CSS for this page -->
+  <style>
+    /* Flexbox puts the three product divs next to each other */
+    .products {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .product {
+      width: 280px;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .product a {
+      text-decoration: none;
+      color: #1b2a49;
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid transparent;  /* keeps layout stable on hover */
+    }
+
+    /* HOVER EFFECT: opacity 0.5 + dotted border */
+    .product img:hover {
+      opacity: 0.5;
+      border: 3px dotted #ff7a00;
+    }
+
+    .product h3 {
+      margin: 12px 0 5px 0;
+    }
+
+    .product .price {
+      color: #ff7a00;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <h2>Tech Accessories Store</h2>
+  <p>Quality computer accessories for work, study and play</p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="clients.html">Our Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+    <h1>Our Products</h1>
+    <p style="text-align:center;">Click any product to place an order.</p>
+
+    <div class="products">
+
+      <!-- Product 1 -->
+      <div class="product">
+        <a href="order.html">
+          <img src="images/wireless_mouse.jpg" alt="Wireless Mouse">
+          <h3>Wireless Mouse</h3>
+          <p class="price">UGX 45,000</p>
+        </a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <a href="order.html">
+          <img src="images/laptop_stand.webp" alt="Laptop Stand">
+          <h3>Laptop Stand</h3>
+          <p class="price">UGX 60,000</p>
+        </a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <a href="order.html">
+          <img src="images/mechanical_keyboard.webp" alt="Mechanical Keyboard">
+          <h3>Mechanical Keyboard</h3>
+          <p class="price">UGX 180,000</p>
+        </a>
+      </div>
+
+    </div>
+  </div>
+<footer>
+  &copy; 2026 Tech Accessories Store | IST 2108 Group 3 Project
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | Tech Accessories Store</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Document-level CSS for this page -->
+  <style>
+    form.register {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    form.register label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    form.register input[type="text"],
+    form.register input[type="email"],
+    form.register input[type="password"],
+    form.register input[type="tel"],
+    form.register input[type="date"],
+    form.register select,
+    form.register textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form.register input:focus,
+    form.register select:focus,
+    form.register textarea:focus {
+      outline: none;
+      border-color: #ff7a00;
+      box-shadow: 0 0 5px rgba(255, 122, 0, 0.5);
+    }
+
+    /* Radio buttons and checkbox labels sit inline */
+    form.register .inline-label {
+      display: inline;
+      font-weight: normal;
+      margin-right: 15px;
+    }
+
+    form.register .buttons {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+    }
+
+    form.register input[type="submit"],
+    form.register input[type="reset"] {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    form.register input[type="submit"] { background-color: #ff7a00; }
+    form.register input[type="reset"]  { background-color: #1b2a49; }
+
+    form.register input[type="submit"]:hover,
+    form.register input[type="reset"]:hover {
+      opacity: 0.85;
+    }
+    /* Validation messages */
+.error {
+  display: block;
+  color: #d62828;
+  font-size: 0.85rem;
+  min-height: 1.1em;
+  margin-top: 3px;
+}
+
+form.register input.invalid {
+  border-color: #d62828;
+  background-color: #fff0f0;
+}
+
+form.register input.valid {
+  border-color: #2a9d4a;
+}
+
+.success-msg {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #e6f7ec;
+  border-left: 5px solid #2a9d4a;
+  border-radius: 5px;
+  color: #1c6b34;
+  font-weight: 600;
+}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <h2>Tech Accessories Store</h2>
+  <p>Quality computer accessories for work, study and play</p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="registration.html" class="active">Registration</a></li>
+      <li><a href="clients.html">Our Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+    <h1>Client Registration</h1>
+
+    <form class="register" action="#" method="post">
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <span class="error" id="emailError"></span>
+
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+256 7XX XXX XXX" required>
+      <span class="error" id="phoneError"></span>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+
+      <label>Gender</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male" class="inline-label">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female" class="inline-label">Female</label>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other" class="inline-label">Other</label>
+
+      <label for="company">Company / Organisation</label>
+      <input type="text" id="company" name="company" placeholder="Optional">
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="uganda">Uganda</option>
+        <option value="kenya">Kenya</option>
+        <option value="tanzania">Tanzania</option>
+        <option value="rwanda">Rwanda</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" placeholder="Enter your address"></textarea>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+      <span class="error" id="passwordError"></span>
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" placeholder="Re-enter password" required>
+        <span class="error" id="confirmError"></span>
+
+      <p>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms" class="inline-label">I agree to the terms and conditions</label>
+      </p>
+
+      <div class="buttons">
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear">
+      </div>
+    </form>
+    <div class="success-msg" id="successMsg">
+      Registration successful! Welcome to Tech Accessories store.
+    </div>
+  </div>
+  <footer>
+  &copy; 2026 Tech Accessories Store | IST 2108 Group 3 Project
+</footer>
+<script>
+  /* Registration form validation (document-level script) */
+  var form = document.getElementById("registerForm");
+
+  // Show or clear an error for one field
+  function setError(inputId, errorId, message) {
+    var input = document.getElementById(inputId);
+    var error = document.getElementById(errorId);
+    error.textContent = message;
+    input.classList.toggle("invalid", message !== "");
+    input.classList.toggle("valid", message === "");
+  }
+
+  function validateEmail() {
+    var v = document.getElementById("email").value.trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    setError("email", "emailError", ok ? "" : "Enter a valid email address.");
+    return ok;
+  }
+
+  function validatePhone() {
+    var v = document.getElementById("phone").value.trim();
+    // Accepts +2567XXXXXXXX or 07XXXXXXXX (spaces allowed)
+    var ok = /^(\+?256|0)7\d{8}$/.test(v.replace(/\s/g, ""));
+    setError("phone", "phoneError", ok ? "" : "Enter a valid number, e.g. 0772 123 456.");
+    return ok;
+  }
+
+  function validatePassword() {
+    var v = document.getElementById("password").value;
+    var ok = v.length >= 8 && /[A-Za-z]/.test(v) && /\d/.test(v);
+    setError("password", "passwordError", ok ? "" : "Use at least 8 characters with letters and numbers.");
+    return ok;
+  }
+
+  function validateConfirm() {
+    var p = document.getElementById("password").value;
+    var c = document.getElementById("confirm").value;
+    var ok = c !== "" && p === c;
+    setError("confirm", "confirmError", ok ? "" : "Passwords do not match.");
+    return ok;
+  }
+
+  // Live feedback as the user types
+  document.getElementById("email").addEventListener("input", validateEmail);
+  document.getElementById("phone").addEventListener("input", validatePhone);
+  document.getElementById("password").addEventListener("input", function () {
+    validatePassword();
+    if (document.getElementById("confirm").value !== "") validateConfirm();
+  });
+  document.getElementById("confirm").addEventListener("input", validateConfirm);
+
+  // Final check on submit
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var allGood = validateEmail() & validatePhone() & validatePassword() & validateConfirm();
+
+    if (allGood) {
+      document.getElementById("successMsg").style.display = "block";
+      form.reset();
+      var inputs = form.querySelectorAll("input");
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove("valid", "invalid");
+      }
+    } else {
+      document.getElementById("successMsg").style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
